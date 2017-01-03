@@ -8,6 +8,3 @@ module Sequence_Generator
     @code = (0...@length).collect{@pool.sample}
   end
 end
-	# def sequence_generator
-	# 	%w(b g r y).shuffle
-	# end

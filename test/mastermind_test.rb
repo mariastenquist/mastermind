@@ -11,16 +11,21 @@ class MastermindTest < Minitest::Test
 	end
 
 	def test_messages
-		mastermind = Mastermind.new
+		mastermind = Mastermind.new  
 		assert nil, mastermind.messages
 	end
 
-	def test_the_main_menu
-		# skip
-		mastermind = Mastermind.new
-		expected = nil
-		assert_equal "p", mastermind.main_menu
-	end
+	def test_it_displays_intro
+   		mastermind = Mastermind.new 
+   		assert_output("Welcome to MASTERMIND"){mastermind.messages}
+ 	end
+
+ 	def test_it_displays_enter_game
+ 		mastermind = Mastermind.new
+ 		assert_output("I have generated a beginner sequence with four elements made up of: (r)ed,
+			(g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.
+			What's your guess?"){mastermind.enter_game}
+ 	end
 
 	def test_the_game_will_exit
 		mastermind = Mastermind.new
